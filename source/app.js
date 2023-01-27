@@ -8,7 +8,6 @@ app.get('/', function (req, res) {
 });
 
 app.use(steamRouter)
-
   
 app.listen(port, () => {
   console.log(`App node rodando em: http://localhost:${port}`)
