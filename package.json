@@ -2,9 +2,10 @@
   "name": "projetotcc",
   "version": "1.0.0",
   "description": "Meu projeto TCC",
-  "main": "index.js",
+  "main": "source/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   "homepage": "https://github.com/Lucas-Pontes-Soares/ProjetoTCC#readme",
   "dependencies": {
     "express": "^4.18.2",
+    "node-fetch": "^2.6.8",
     "nodemon": "^2.0.20"
   }
 }
