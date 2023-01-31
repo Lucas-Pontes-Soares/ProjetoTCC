@@ -5,3 +5,4 @@
 * Express
 * Nodemon
 * Fetch
+* Xbox web api : https://www.npmjs.com/package/xbox-webapi
