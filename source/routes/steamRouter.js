@@ -10,6 +10,4 @@ router.get('/steam/findGetPlayerGames/UserId/:UserId', getPlayerGames)
 router.get('/steam/findGetPlayerSummaries/UserId/:UserId', getPlayerSummaries)
 router.get('/steam/findGetAchievementsGame/UserId/:UserId/Gameid/:appid', getAchievementsGame)
 
-
-
 module.exports = router;

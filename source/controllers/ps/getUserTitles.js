@@ -1,26 +1,23 @@
-const PlaystationAPI = require('psn-api')
-import { exchangeNpssoForCode } from "psn-api";
+const {exchangeNpssoForCode} = require("psn-api")
+const {exchangeCodeForAccessToken} = require("psn-api")
+const {makeUniversalSearch} = require("psn-api")
+const {getUserTitles} = require("psn-api")
 
-// This is the value you copied from the previous step.
+module.exports = getUserGames = async(req, res) => {
+    const myNpsso = "lPKsnWcDp32b7AYEdiKowyJy5c3cYlSnHiSUyOhVM37cls4TUssUBMxOyMFq7AGD";
 
-TestePS = async(req, res) => {
-    const myNpsso = "<O5hqfz67CX9w6REvJ0lw3a5XMla2FlZ5LSat6p6JHrpE6jaB8LkNFqfQMQOF6dvt>";
-
-    // We'll exchange your NPSSO for a special access code.
     const accessCode = await exchangeNpssoForCode(myNpsso);
-
-    // 🚀 We can use the access code to get your access token and refresh token.
+    
     const authorization = await exchangeCodeForAccessToken(accessCode);
 
+    
     const idUsuario = await makeUniversalSearch(
-    authorization,
-    "xelnia",
-    "SocialAllAccounts"
+        authorization,
+        "Enzoyoutuber123",
+        "SocialAllAccounts"
     );
 
-    const response = await getUserTitles(authorization, idUsuario);
-
-    console.log(response);
+    const response = await getUserTitles(authorization, idUsuario.domainResponses[0].results[0].socialMetadata.accountId);
+    res.json({jogos: response}) 
 }
 
-TestePS();

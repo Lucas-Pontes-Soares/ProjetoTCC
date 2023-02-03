@@ -8,4 +8,5 @@ const getUserProfile = require('../controllers/xbox/getUserProfile');
 
 router.get('/xbox/findGetUserAchievements', authProfile, getAchivementsProfile)
 router.get('/xbox/findGetUserProfile', authProfile, getUserProfile)
+
 module.exports = router;
