@@ -5,6 +5,6 @@ module.exports = createUser = async(req, res) => {
     userModel.create(body).then((users)=>{
         res.json({success: true, message: "Usuario criado", user: users})
     }).catch((err)=>{
-        res.json({success: false, message: "Usuario criado", err: err.message})
+        res.json({success: false, message: "Usuario não criado", err: err.message})
     })
 }
