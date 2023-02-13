@@ -6,6 +6,7 @@ const steamRouter = require("./routes/steamRouter")
 const xboxRouter = require("./routes/xboxRouter")
 const playstationRouter = require("./routes/playstationRouter")
 const userRouter = require("./routes/userRouter")
+const PlayerRequestRouter = require("./routes/playerRequestRouter")
 var bodyParser = require("body-parser")
 
 
@@ -19,7 +20,7 @@ app.use(steamRouter)
 app.use(xboxRouter)
 app.use(playstationRouter)
 app.use(userRouter)
-
+app.use(PlayerRequestRouter)
   
 app.listen(port, () => {
   console.log(`App node rodando em: http://localhost:${port}`)
