@@ -1,6 +1,6 @@
 const userModel = require("../../database/models/usuario")
 
-module.exports = createUser = async(req, res) => {
+module.exports = loginUser = async(req, res) => {
     const email = req.body.email
     const password = req.body.password
 
