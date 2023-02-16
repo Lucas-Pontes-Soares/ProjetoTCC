@@ -5,6 +5,10 @@ var user = new mongoose.Schema({
     last_name: {type: String, required: true},
     email: {type: String, required: true},
     password: {type: String, required: true},
+    friendsId: {type: String, required: false},
+    SteamId: {type: String, required: false},
+    XboxToken: {type: String, required: false},
+    PSname: {type: String, required: false},
 });
 
 user.set("toJSON", { virtuals: true });

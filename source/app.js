@@ -9,7 +9,6 @@ const userRouter = require("./routes/userRouter")
 const PlayerRequestRouter = require("./routes/playerRequestRouter")
 var bodyParser = require("body-parser")
 
-
 app.get('/', function (req, res) {
   res.send('Hello!');
 });

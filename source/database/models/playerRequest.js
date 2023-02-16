@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 
 var playerRequest = new mongoose.Schema({
-    userId: {type: String, required: true},
+    userId: {type: String, required: true, ref: 'user'},
     title: {type: String, required: true},
     game: {type: String, required: true},
     message: {type: String, required: true},
