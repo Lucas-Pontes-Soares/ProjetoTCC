@@ -3,7 +3,8 @@ var XboxApiClient = require('../../../node_modules/xbox-webapi/src/client')
 module.exports =  authen = async(req, res, next) => {
     req.client = {}
     var client = XboxApiClient({
-        clientId: '5e5ead27-ed60-482d-b3fc-702b28a97404'
+        clientId: '5e5ead27-ed60-482d-b3fc-702b28a97404',
+        userId: req.params.loginId
     })
 
     client.isAuthenticated().then(function(){
