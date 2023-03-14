@@ -5,9 +5,10 @@ const router = express.Router();
 const getPlayerGames = require('../controllers/steam/getPlayerGames');
 const getPlayerSummaries = require('../controllers/steam/getPlayerSummaries');
 const getAchievementsGame = require('../controllers/steam/getAchievementsGames');
+const authToken = require('../controllers/authToken/authToken')
 
 router.get('/steam/findGetPlayerGames/UserId/:UserId', getPlayerGames)
-router.get('/steam/findGetPlayerSummaries/UserId/:UserId', getPlayerSummaries)
+router.post('/steam/findGetPlayerSummaries/UserId/:UserId', authToken, getPlayerSummaries)
 router.get('/steam/findGetAchievementsGame/UserId/:UserId/Gameid/:appid', getAchievementsGame)
 
 module.exports = router;
