@@ -4,7 +4,7 @@ dotenv.config();
 module.exports = authToken = async(req, res, next) => {
     // check header or url parameters or post parameters for token
     var authToken = process.env.AUTH_TOKEN
-    var token = req.body.token
+    const token = req.headers.token
     // decode token
     if (token) {
     // verifies secret and checks exp
