@@ -13,6 +13,6 @@ router.post('/user/createuser', createUser)
 router.get('/user/getUser/:id', authToken, getUser)
 router.post('/user/loginuser', loginUser)
 router.put('/user/updateUser/:id', authToken, updateUser)
-router.delete('/user/deleteUser/:id', deleteUser)
+router.delete('/user/deleteUser/:id', authToken, deleteUser)
 
 module.exports = router;
