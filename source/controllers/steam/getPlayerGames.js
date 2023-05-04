@@ -18,7 +18,7 @@ module.exports = getPlayerGames = async(req, res) => {
             achivementGame = await achivementGame.json()
 
             //verifica se é um jogo, ou uma dlc que não possui dados
-            if(dataGame[game.appid] == null){
+            if(dataGame[game.appid].success == "false"){
                 console.log("Erro!")
             }else{
                 gamePopulate = {
