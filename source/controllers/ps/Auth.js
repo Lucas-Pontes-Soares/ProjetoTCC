@@ -3,7 +3,7 @@ const {exchangeCodeForAccessToken} = require("psn-api")
 
 module.exports = AuthenticationPlaystation = async(req, res, next) => {
     try {
-        const myNpsso = "lPKsnWcDp32b7AYEdiKowyJy5c3cYlSnHiSUyOhVM37cls4TUssUBMxOyMFq7AGD";
+        const myNpsso = "XhdMwQ4wQh76gR03Da8ICdOpf8kHkd7HK648qxpYwFTXMZuJmPkOiiRXy3Xc40NM";
         const accessCode = await exchangeNpssoForCode(myNpsso);
         req.authorization = await exchangeCodeForAccessToken(accessCode);
         next()
