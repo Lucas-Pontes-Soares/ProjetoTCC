@@ -11,7 +11,9 @@ module.exports = getPlayerGames = async(req, res) => {
 
             //api para buscar nome e imagem do jogo
             let dataGame = await fetch(`https://store.steampowered.com/api/appdetails?appids=${game.appid}`) 
-            dataGame = await dataGame.json()
+            if(dataGame){
+                dataGame = await dataGame.json()
+            }
 
             //api para buscar as conquistas do jogo
             let achivementGame = await fetch(`https://api.steampowered.com/ISteamUserStats/GetPlayerAchievements/v0001/?appid=${game.appid}&key=02EF230DE713B2F6607714BFC2F58B69&steamid=${req.params.UserId}}`) 
