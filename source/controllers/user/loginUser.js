@@ -8,6 +8,11 @@ module.exports = loginUser = async(req, res) => {
     const email = req.body.email
     const password = req.body.password
 
+    let sucess = true;
+    let type = "Sucesso";
+    let message = "Usuario logado";
+    let token = null;
+    
     userModel.findOne({email: email, password: password}).then((user)=>{
         if(user){
             // token de autenticação, jwt
@@ -17,19 +22,20 @@ module.exports = loginUser = async(req, res) => {
 
             var authToken = process.env.AUTH_TOKEN
 
-            const token = jwt.sign(JSON.stringify(tokenBody), authToken)
- 
-            res.json({
-                success: true,
-                message: "Usuario Logado!",
-                token,
-                user: user
-            })
-
+            token = jwt.sign(JSON.stringify(tokenBody), authToken)
         }else {
-            return res.status(404).send("Usuario não encontrado")
+            sucess = false;
+            type = "Erro";
+            message = "Email ou senha incorretos";
         }
+        res.json({
+            success: sucess,
+            type: type,
+            message: message,
+            token: token,
+            user: user
+        })
     }).catch((err)=>{
-        res.json({success: false, message: err})
+        res.json({success: false, type:"Erro", message: err})
     })
 }
