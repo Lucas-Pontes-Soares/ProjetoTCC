@@ -4,6 +4,7 @@ var user = new mongoose.Schema({
     first_name: {type: String, required: true},
     last_name: {type: String, required: true},
     nick: {type: String, required: true},
+    image: {type: String, required: false},
     email: {type: String, required: true},
     password: {type: String, required: true},
     friendsId: {type: String, required: false},
