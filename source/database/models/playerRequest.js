@@ -11,6 +11,7 @@ var playerRequest = new mongoose.Schema({
     time: {type: String, required: true},
     countPlayers: {type: Number, required: true},
     playersFound: {type: Number, required: true},
+    jogadoresInteressados: {type: Array, required: false},
     concluded: {type: Boolean, required: true},
 });
 
