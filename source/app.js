@@ -13,11 +13,12 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const corsOptions ={
-   origin:'*', 
+   origin:'https://gplink-aj6y.onrender.com', 
    credentials:true,            //access-control-allow-credentials:true
    optionSuccessStatus:200,
 }
 
+console.log(corsOptions)
 app.use(cors(corsOptions))
 
 app.use(express.json());
@@ -33,6 +34,6 @@ app.get('/', function (req, res) {
 });
 
 app.listen(port, () => {
-  console.log(`App node rodando em: http://localhost:${port}`);
+  console.log(`App node rodando em: http://localhost:${port} teste`);
   connect();
 });
