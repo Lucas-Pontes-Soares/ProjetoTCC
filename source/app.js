@@ -9,12 +9,19 @@ const userRouter = require("./routes/userRouter")
 const PlayerRequestRouter = require("./routes/playerRequestRouter")
 var bodyParser = require("body-parser")
 var cors = require("cors");
+const dotenv = require('dotenv');
+dotenv.config();
 
 app.get('/', function (req, res) {
   res.send('Hello!');
+  res.setHeader('Access-Control-Allow-Origin', `${process.env.URLFrontend}`);
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); 
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type'); 
+  res.setHeader('Access-Control-Allow-Credentials', true); 
 });
 
-app.use(cors());
+app.use(cors({origin: `${process.env.URLFrontend}`}));
+
 app.use(express.json())
 app.use(bodyParser.json());
 app.use(steamRouter)
