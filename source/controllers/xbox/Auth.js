@@ -26,7 +26,7 @@ module.exports =  authen = async(req, res, next) => {
             }).catch(function(error){
                 console.log('error', error)
             })
-        }, 8081)
+        }, 1233)
         console.log('Open the following link to authenticate:', url)
         res.json({auth: false, type: "Informação", message: "Autorize a sua conexão do xbox pelo link: ", url})
     })
