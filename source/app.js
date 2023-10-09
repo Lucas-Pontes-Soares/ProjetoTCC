@@ -13,7 +13,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const corsOptions ={
-   origin:["*"], 
+   origin:'*', 
    credentials:true,            //access-control-allow-credentials:true
    optionSuccessStatus:200,
 }
