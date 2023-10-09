@@ -10,7 +10,7 @@ const getPlayerSummaries = require('../controllers/steam/getPlayerSummaries');
 const getAchievementsGame = require('../controllers/steam/getAchievementsGames');
 
 router.get('/steam/findGetPlayerGames/UserId/:UserId/:page', getPlayerGames)
-router.get('/steam/findGetPlayerSummaries/UserId/:UserId', authToken, getPlayerSummaries)
+router.get('/steam/findGetPlayerSummaries/UserId/:UserId', getPlayerSummaries)
 router.get('/steam/findGetAchievementsGame/UserId/:UserId/Gameid/:appid', getAchievementsGame)
 
 module.exports = router;

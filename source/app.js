@@ -13,7 +13,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const corsOptions ={
-   origin:'https://gplink-aj6y.onrender.com', 
+   origin:["https://gplink-aj6y.onrender.com","https://gplink-proxy.onrender.com"], 
    credentials:true,            //access-control-allow-credentials:true
    optionSuccessStatus:200,
 }
